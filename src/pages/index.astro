@@ -1,0 +1,39 @@
+---
+import BaseLayout from '$layouts/BaseLayout.astro';
+import BlogRoll from '$components/BlogRoll.svelte';
+import Card from '$components/Card.svelte';
+
+/** @type {Promise<{datePublished: string; postTitle: string; seoMetaDescription: string; file: string;}[]>} */
+const rawPosts = await Astro.fetchContent('../content/posts/**/index.md');
+const sortedRawPosts = rawPosts.sort(
+  (a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf(),
+);
+
+const posts = sortedRawPosts.map(
+  ({ datePublished, postTitle, seoMetaDescription, file: { pathname } }) => {
+    const slug = pathname.split('/').at(-2);
+    return { datePublished, postTitle, seoMetaDescription, slug };
+  },
+);
+---
+
+<BaseLayout>
+  <header>
+    <h1>Climate &mdash; Astro Starter</h1>
+    <h2>Astro Svelte Markdown Blog</h2>
+  </header><Card>
+    <h2 class="heading">About me</h2>
+    <p>
+      I live and breathe analogue photography. I show you my favourite analogue film cameras on this
+      site. Hopefully if you are not into analogue photography yet, some of my enthusiasm will rub
+      off onto you.
+    </p>
+  </Card>
+  <BlogRoll client:visible initialPosts={4} {posts} />
+</BaseLayout>
+
+<style>
+  .heading {
+    margin-top: var(--spacing-0);
+  }
+</style>

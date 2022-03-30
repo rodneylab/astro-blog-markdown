@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "$components/*": ["src/components/*"],
+      "$config/*": ["src/config/*"],
+      "$constants/*": ["src/constants/*"],
+      "$layouts/*": ["src/layouts/*"],
+      "$styles/*": ["src/styles/*"],
+      "$utilities/*": ["src/utilities/*"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

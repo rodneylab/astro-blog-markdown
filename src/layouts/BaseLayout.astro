@@ -1,0 +1,47 @@
+---
+import '$styles/normalise.css';
+import '$styles/variables.css';
+import '$styles/styles.css';
+import Header from '$components/Header.svelte';
+import Footer from '$components/Footer.svelte';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
+    <title>Astro</title>
+  </head>
+
+  <div class="container">
+    <Header />
+    <main class="main-container">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+</html>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--spacing-4) var(--spacing-0) var(--spacing-0);
+
+    margin: var(--spacing-0) var(--spacing-4);
+    @media screen and (min-width: var(--desktop-breakpoint)) {
+      margin: var(--spacing-0) auto;
+    }
+
+    min-height: 100vh;
+  }
+  .main-container {
+    max-width: var(--max-width-wrapper);
+    width: var(--max-width-full);
+    margin: var(--spacing-0) auto;
+  }
+</style>

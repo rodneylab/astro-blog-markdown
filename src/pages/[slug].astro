@@ -1,0 +1,37 @@
+---
+import BaseLayout from '$layouts/BaseLayout.astro';
+import { Markdown } from 'astro/components';
+
+export async function getStaticPaths() {
+  /** @type {Promise<{ astro: {source: string;} postTitle: string; file: string;}[]>} */
+  const posts = await Astro.fetchContent('../content/posts/**/index.md');
+
+  return posts.map(({ astro: { source: content }, file: { pathname }, postTitle }) => {
+    const slug = pathname.split('/').at(-2);
+    const props = { content, postTitle };
+
+    return {
+      params: { slug },
+      props,
+    };
+  });
+}
+
+const { content, postTitle } = Astro.props;
+---
+
+<BaseLayout>
+  <h1>{postTitle}</h1>
+  <div class="container">
+    <Markdown {content}>
+
+    </Markdown>
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: var(--max-width-xl);
+    margin: var(--spacing-0) auto;
+  }
+</style>
