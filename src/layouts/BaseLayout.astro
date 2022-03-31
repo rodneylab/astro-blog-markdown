@@ -5,11 +5,13 @@ import '$styles/styles.css';
 import Footer from '$components/Footer.svelte';
 import Header from '$components/Header.svelte';
 import SEO from '$components//SEO/index.astro';
+import website from '$config/website';
 
 const { metadescription, slug, title } = Astro.props;
+const { siteLanguage: lang } = website;
 ---
 
-<html lang="en-GB">
+<html {lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
