@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && subfont -ir --root dist",
     "preview": "astro preview",
     "check": "astro check --fail-on-warnings",
     "check:svelte": "svelte-check --fail-on-hints",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@astrojs/svelte": "^0.0.2",
     "@commitlint/config-conventional": "^16.2.1",
-    "@iconify/svelte": "^2.2.0",
+    "@iconify/svelte": "^2.2.1",
     "@netlify/plugin-lighthouse": "^2.1.3",
     "astro": "^0.25.4",
     "autoprefixer": "^10.4.4",
@@ -28,8 +28,11 @@
     "prettier-plugin-astro": "^0.0.12",
     "stylelint": "^14.6.1",
     "stylelint-config-recommended": "^7.0.0",
-    "svelte": "^3.46.5",
+    "svelte": "^3.46.6",
     "svelte-check": "^2.4.6",
-    "vite": "^2.9.0"
+    "vite": "^2.9.1"
+  },
+  "dependencies": {
+    "subfont": "^6.4.1"
   }
 }
