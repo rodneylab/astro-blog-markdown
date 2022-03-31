@@ -17,6 +17,8 @@
 
 Starter for fast Astro blog using a spot of Svelte. See post on <a aria-label="Open article on using the Astro blog starter" href="https://rodneylab.com/astro-blog-markdown/">how to get up and running on the Astro blog starter</a>.
 
+<img src="./images/astro-blog-markdown-lighthouse.png" alt="Lighthouse scores for 100 in each category">
+
 # Astro Blog Markdown
 
 ```
