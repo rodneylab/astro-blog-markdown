@@ -1,8 +1,8 @@
 ---
 postTitle: 'Twin Lens Reflex Camera'
 focusKeyphrase: 'Twin Lens Reflex love'
-datePublished: '2021-04-06T10:31:48.000+0100'
-lastUpdated: '2021-04-14T10:17:52.000+0100'
+datePublished: '2022-03-06T10:31:48.000+0100'
+lastUpdated: '2022-03-14T10:17:52.000+0100'
 seoMetaDescription: 'TLR or Twin Lens Reflex Cameras have the benefit of you being able to hold the camera at waist level to take a picture and get a more engaging camera angle.'
 featuredImage: 'twin-lens-reflex-camera.jpg'
 featuredImageAlt: 'Photograph of a Rolleicord twin Lens reflex camera'
@@ -11,6 +11,7 @@ ogSquareImage: 'twin-lens-reflex-camera-open-graph-square.jpg'
 twitterImage: 'twin-lens-reflex-camera-twitter.jpg'
 categories: ''
 tags: ''
+draft: false
 ---
 
 ## What is a Twin Lens Reflex Camera?

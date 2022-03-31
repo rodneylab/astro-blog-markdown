@@ -1,8 +1,8 @@
 ---
 postTitle: 'Best Medium Format Camera for Starting Out'
 focusKeyphrase: 'best medium format camera'
-datePublished: '2021-04-07T16:04:42.000+0100'
-lastUpdated: '2021-04-14T10:17:52.000+0100'
+datePublished: '2022-03-07T16:04:42.000+0100'
+lastUpdated: '2022-03-14T10:17:52.000+0100'
 seoMetaDescription: "Best medium format camera for starting out is probably a question at the front of your mind right now! Let's take a look."
 featuredImage: 'best-medium-format-camera-for-starting-out.jpg'
 featuredImageAlt: 'Photograph of a Hasselblad medium format camera with the focusing screen exposed'
@@ -11,6 +11,7 @@ ogSquareImage: 'best-medium-format-camera-for-starting-out-open-graph-square.jpg
 twitterImage: 'best-medium-format-camera-for-starting-out-twitter.jpg'
 categories: ''
 tags: ''
+draft: false
 ---
 
 ## What is a Medium Format Camera?
