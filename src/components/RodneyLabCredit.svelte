@@ -37,7 +37,7 @@
   .container {
     display: 'flex';
     align-items: 'center';
-    color: #032539;
+    color: hsl(202 90% 12%);
     font-family: Lato;
   }
 

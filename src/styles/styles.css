@@ -187,7 +187,7 @@ blockquote {
   margin-left: calc(-1 + var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
+  border-left: var(--spacing-1) solid var(--color-theme-4);
   font-size: var(--font-size-2);
   font-style: italic;
   margin-bottom: var(--spacing-8);
