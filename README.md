@@ -18,7 +18,10 @@ Starter for fast Astro blog using a spot of Svelte.
 # Astro Blog Markdown
 
 ```
-pnpm init astro -- --template https://github.com/rodneylab/astro-blog-starter
+git clone https://github.com/rodneylab/astro-blog-markdown
+pnpm install
+cp .env.EXAMPLE .env
+pnpm run dev
 ```
 
 ## 🧞 Commands
