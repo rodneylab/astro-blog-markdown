@@ -16,9 +16,16 @@ const {
   twitterUsername,
   wireUsername,
 } = website;
+
+const seoProps = {
+  metadescription:
+    'Get in touch with Rodneylab, the developer of Climate Astro Blog Markdown Starter.',
+  slug: 'contact',
+  title: 'Contact',
+};
 ---
 
-<BaseLayout>
+<BaseLayout {...seoProps}>
   <Card>
     <h1>Contact me</h1>
     <p>I would love to hear from you. Please get in touch!</p>

@@ -2,19 +2,22 @@
 import '$styles/normalise.css';
 import '$styles/variables.css';
 import '$styles/styles.css';
-import Header from '$components/Header.svelte';
 import Footer from '$components/Footer.svelte';
+import Header from '$components/Header.svelte';
+import SEO from '$components//SEO/index.astro';
+
+const { metadescription, slug, title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
-
+  <SEO {metadescription} {slug} {title} />
   <div class="container">
     <Header />
     <main class="main-container">

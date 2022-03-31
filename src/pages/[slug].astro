@@ -6,21 +6,30 @@ export async function getStaticPaths() {
   /** @type {Promise<{ astro: {source: string;} postTitle: string; file: string;}[]>} */
   const posts = await Astro.fetchContent('../content/posts/**/index.md');
 
-  return posts.map(({ astro: { source: content }, file: { pathname }, postTitle }) => {
-    const slug = pathname.split('/').at(-2);
-    const props = { content, postTitle };
+  return posts.map(
+    ({ astro: { source: content }, file: { pathname }, postTitle, seoMetaDescription }) => {
+      const slug = pathname.split('/').at(-2);
+      const props = { content, postTitle, seoMetaDescription };
 
-    return {
-      params: { slug },
-      props,
-    };
-  });
+      return {
+        params: { slug },
+        props,
+      };
+    },
+  );
 }
 
-const { content, postTitle } = Astro.props;
+const { content, postTitle, seoMetaDescription } = Astro.props;
+const { slug } = Astro.request.params;
+
+const seoProps = {
+  metadescription: seoMetaDescription,
+  slug,
+  title: postTitle,
+};
 ---
 
-<BaseLayout>
+<BaseLayout {...seoProps}>
   <h1>{postTitle}</h1>
   <div class="container">
     <Markdown {content}>
