@@ -13,12 +13,15 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/rodneylab/astro-blog-markdown)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba727efb-61da-4338-94fa-15cf51fdd924/deploy-status)](https://app.netlify.com/sites/jazzy-pixie-b363bf/deploys)
+
 Starter for fast Astro blog using a spot of Svelte.
 
 # Astro Blog Markdown
 
 ```
 git clone https://github.com/rodneylab/astro-blog-markdown
+cd astro-blog-markdown
 pnpm install
 cp .env.EXAMPLE .env
 pnpm run dev
