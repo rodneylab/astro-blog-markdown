@@ -15,7 +15,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba727efb-61da-4338-94fa-15cf51fdd924/deploy-status)](https://app.netlify.com/sites/jazzy-pixie-b363bf/deploys)
 
-Starter for fast Astro blog using a spot of Svelte.
+Starter for fast Astro blog using a spot of Svelte. See post on <a aria-label="Open article on using the Astro blog starter" href="https://rodneylab.com/astro-blog-markdown/">how to get up and running on the Astro blog starter</a>.
 
 # Astro Blog Markdown
 
