@@ -3,9 +3,7 @@
 </script>
 
 <header class="header-container">
-  <a aria-label="Jump to Home page" class="hover-jump" href="/"
-    ><span class="logo"><CameraIcon width={96} /></span></a
-  >
+  <a aria-label="Jump to Home page" class="hover-jump logo" href="/"><CameraIcon width={96} /></a>
   <nav class="nav">
     <ul>
       <li><a href="/.">Home</a></li>
