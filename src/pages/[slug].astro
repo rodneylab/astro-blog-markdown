@@ -2,14 +2,23 @@
 import BaseLayout from '$layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
+/**
+ * Astro API see: https://docs.astro.build/en/reference/api-reference/#getstaticpaths
+ * @returns {Promise<{params: {slug: string;}; props: { content: string; title: string; metadescription: string;}}[]>}
+ */
 export async function getStaticPaths() {
-  /** @type {Promise<{ astro: {source: string;} postTitle: string; file: string;}[]>} */
+  /** @type {Promise<{ astro: {source: string;} postTitle: seoMetaDescription: string; string; file: URL;}[]>} */
   const posts = await Astro.fetchContent('../content/posts/**/index.md');
 
   return posts.map(
-    ({ astro: { source: content }, file: { pathname }, postTitle, seoMetaDescription }) => {
+    ({
+      astro: { source: content },
+      file: { pathname },
+      postTitle: title,
+      seoMetaDescription: metadescription,
+    }) => {
       const slug = pathname.split('/').at(-2);
-      const props = { content, postTitle, seoMetaDescription };
+      const props = { content, title, metadescription };
 
       return {
         params: { slug },
@@ -19,18 +28,18 @@ export async function getStaticPaths() {
   );
 }
 
-const { content, postTitle, seoMetaDescription } = Astro.props;
+const { content, title, metadescription } = Astro.props;
 const { slug } = Astro.request.params;
 
 const seoProps = {
-  metadescription: seoMetaDescription,
+  metadescription,
   slug,
-  title: postTitle,
+  title,
 };
 ---
 
 <BaseLayout {...seoProps}>
-  <h1>{postTitle}</h1>
+  <h1>{title}</h1>
   <div class="container">
     <Markdown {content}>
 
