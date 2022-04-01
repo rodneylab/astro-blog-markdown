@@ -2,13 +2,48 @@
 import BaseLayout from '$layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
+import website from '$config/website';
+
 /**
  * Astro API see: https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  * @returns {Promise<{params: {slug: string;}; props: { content: string; title: string; metadescription: string;}}[]>}
  */
-export async function getStaticPaths() {
-  /** @type {Promise<{ astro: {source: string;} postTitle: seoMetaDescription: string; string; file: URL;}[]>} */
+export async function getStaticPaths({ rss }) {
+  /** @type {Promise<{ astro: {source: string;}; datePublished: string; postTitle: seoMetaDescription: string; string; file: URL;}[]>} */
   const posts = await Astro.fetchContent('../content/posts/**/index.md');
+
+  const { siteLanguage, siteTitle, siteUrl } = website;
+
+  const items = posts
+    .sort(
+      ({ datePublished: datePublishedA }, { datePublished: datePublishedB }) =>
+        Date.parse(datePublishedB) - Date.parse(datePublishedA),
+    )
+    .map(
+      ({
+        datePublished,
+        file: { pathname },
+        postTitle: title,
+        seoMetaDescription: description,
+      }) => {
+        const slug = pathname.split('/').at(-2);
+
+        return {
+          title,
+          description,
+          link: `${siteUrl}/${slug}/`,
+          pubDate: datePublished,
+        };
+      },
+    );
+
+  rss({
+    title: siteTitle,
+    stylesheet: true,
+    description: `${siteTitle} Blog Posts`,
+    customData: `<language>${siteLanguage.toLocaleLowerCase()}</language>`,
+    items,
+  });
 
   return posts.map(
     ({
