@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "build:subfont": "astro build && subfont -ir --root dist",
+    "build": "astro build && subfont -ir --root dist",
     "preview": "astro preview",
     "check": "astro check --fail-on-warnings",
     "check:svelte": "svelte-check --fail-on-hints",
