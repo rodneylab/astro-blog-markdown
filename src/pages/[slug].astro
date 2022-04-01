@@ -18,11 +18,10 @@ export async function getStaticPaths() {
       seoMetaDescription: metadescription,
     }) => {
       const slug = pathname.split('/').at(-2);
-      const props = { content, title, metadescription };
 
       return {
         params: { slug },
-        props,
+        props: { content, title, metadescription },
       };
     },
   );
