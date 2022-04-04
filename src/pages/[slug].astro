@@ -9,24 +9,24 @@ import website from '$config/website';
  * @returns {Promise<{params: {slug: string;}; props: { content: string; title: string; metadescription: string;}}[]>}
  */
 export async function getStaticPaths({ rss }) {
-  /** @type {Promise<{ astro: {source: string;}; datePublished: string; postTitle: seoMetaDescription: string; string; file: URL;}[]>} */
-  const posts = await Astro.fetchContent('../content/posts/**/index.md');
+  /** @type {Promise<{ Content: AstroComponent; frontmatter: {datePublished: string; postTitle: seoMetaDescription: string;}; file: URL;}[]>} */
+  const posts = await Astro.glob('../content/posts/**/index.md');
 
   const { siteLanguage, siteTitle, siteUrl } = website;
 
   const items = posts
     .sort(
-      ({ datePublished: datePublishedA }, { datePublished: datePublishedB }) =>
-        Date.parse(datePublishedB) - Date.parse(datePublishedA),
+      (
+        { frontmatter: { datePublished: datePublishedA } },
+        { frontmatter: { datePublished: datePublishedB } },
+      ) => Date.parse(datePublishedB) - Date.parse(datePublishedA),
     )
     .map(
       ({
-        datePublished,
-        file: { pathname },
-        postTitle: title,
-        seoMetaDescription: description,
+        file,
+        frontmatter: { datePublished, postTitle: title, seoMetaDescription: description },
       }) => {
-        const slug = pathname.split('/').at(-2);
+        const slug = file.split('/').at(-2);
 
         return {
           title,
@@ -46,24 +46,19 @@ export async function getStaticPaths({ rss }) {
   });
 
   return posts.map(
-    ({
-      astro: { source: content },
-      file: { pathname },
-      postTitle: title,
-      seoMetaDescription: metadescription,
-    }) => {
-      const slug = pathname.split('/').at(-2);
+    ({ Content, file, frontmatter: { postTitle: title, seoMetaDescription: metadescription } }) => {
+      const slug = file.split('/').at(-2);
 
       return {
         params: { slug },
-        props: { content, title, metadescription },
+        props: { Content, title, metadescription },
       };
     },
   );
 }
 
-const { content, title, metadescription } = Astro.props;
-const { slug } = Astro.request.params;
+const { Content, title, metadescription } = Astro.props;
+const { slug } = Astro.params;
 
 const seoProps = {
   metadescription,
@@ -75,9 +70,7 @@ const seoProps = {
 <BaseLayout {...seoProps}>
   <h1>{title}</h1>
   <div class="container">
-    <Markdown {content}>
-
-    </Markdown>
+    <Content />
   </div>
 </BaseLayout>
 

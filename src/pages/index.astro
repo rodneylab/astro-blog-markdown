@@ -3,15 +3,18 @@ import BaseLayout from '$layouts/BaseLayout.astro';
 import BlogRoll from '$components/BlogRoll.svelte';
 import Card from '$components/Card.svelte';
 
-/** @type {Promise<{datePublished: string; postTitle: string; seoMetaDescription: string; file: string;}[]>} */
-const rawPosts = await Astro.fetchContent('../content/posts/**/index.md');
+/** @type {Promise<{frontmatter: {datePublished: string; postTitle: string; seoMetaDescription: string; }file: string;}[]>} */
+const rawPosts = await Astro.glob('../content/posts/**/index.md');
 const sortedRawPosts = rawPosts.sort(
-  (a, b) => new Date(b.datePublished).valueOf() - new Date(a.datePublished).valueOf(),
+  (
+    { frontmatter: { datePublished: datePublishedA } },
+    { frontmatter: { datePublished: datePublishedB } },
+  ) => new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
 );
 
 const posts = sortedRawPosts.map(
-  ({ datePublished, postTitle, seoMetaDescription, file: { pathname } }) => {
-    const slug = pathname.split('/').at(-2);
+  ({ frontmatter: { datePublished, postTitle, seoMetaDescription }, file }) => {
+    const slug = file.split('/').at(-2);
     return { datePublished, postTitle, seoMetaDescription, slug };
   },
 );
