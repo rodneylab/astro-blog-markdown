@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '$layouts/BaseLayout.astro';
-import { Markdown } from 'astro/components';
 
 import website from '$config/website';
 
@@ -41,7 +40,7 @@ export async function getStaticPaths({ rss }) {
     title: siteTitle,
     stylesheet: true,
     description: `${siteTitle} Blog Posts`,
-    customData: `<language>${siteLanguage.toLocaleLowerCase()}</language>`,
+    customData: `<language>${siteLanguage.toLowerCase()}</language>`,
     items,
   });
 
