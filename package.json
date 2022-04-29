@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "BSD-3-Clause",
-  "description": "SvelteKit Shiki syntax highlighting: use any VSCode colour theme to accessibly syntax highlight code on your SvelteKit app with line numbers.",
+  "description": "Astro blog Markdown: starter for fast Astro blog with partial hydration and a spot of Svelte speed. Create a new blog site in minutes",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
