@@ -2,6 +2,8 @@
   "name": "astro-blog-markdown",
   "version": "0.1.0",
   "private": true,
+  "license": "BSD-3-Clause",
+  "description": "SvelteKit Shiki syntax highlighting: use any VSCode colour theme to accessibly syntax highlight code on your SvelteKit app with line numbers.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,22 +16,29 @@
     "prettier:check": "prettier --check --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@astrojs/svelte": "^0.1.1",
-    "@commitlint/config-conventional": "^16.2.1",
+    "@astrojs/svelte": "^0.1.2",
+    "@commitlint/config-conventional": "^16.2.4",
     "@iconify/svelte": "^2.2.1",
-    "astro": "^1.0.0-beta.12",
-    "autoprefixer": "^10.4.4",
-    "commitlint": "^16.2.3",
+    "astro": "^1.0.0-beta.19",
+    "autoprefixer": "^10.4.5",
+    "commitlint": "^16.2.4",
     "husky": "^7.0.4",
     "postcss": "^8.4.12",
     "postcss-html": "^1.4.1",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.0.12",
-    "stylelint": "^14.7.1",
+    "stylelint": "^14.8.0",
     "stylelint-config-recommended": "^7.0.0",
     "subfont": "^6.4.2",
     "svelte": "^3.47.0",
     "svelte-check": "^2.7.0",
-    "vite": "^2.9.5"
+    "vite": "^2.9.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodneylab/astro-blog-markdown"
+  },
+  "bugs": {
+    "url": "https://github.com/rodneylab/astro-blog-markdown/issues"
   }
 }
