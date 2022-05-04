@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@astrojs/svelte": "^0.1.2",
+    "@astrojs/turbolinks": "^0.1.2",
     "@commitlint/config-conventional": "^16.2.4",
     "@iconify/svelte": "^2.2.1",
     "astro": "^1.0.0-beta.20",

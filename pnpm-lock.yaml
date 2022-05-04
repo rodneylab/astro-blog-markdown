@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/svelte': ^0.1.2
+  '@astrojs/turbolinks': ^0.1.2
   '@commitlint/config-conventional': ^16.2.4
   '@iconify/svelte': ^2.2.1
   astro: ^1.0.0-beta.20
@@ -21,6 +22,7 @@ specifiers:
 
 devDependencies:
   '@astrojs/svelte': 0.1.2_7rdouneyzuzzxg2ku6jr6gatj4
+  '@astrojs/turbolinks': 0.1.2
   '@commitlint/config-conventional': 16.2.4
   '@iconify/svelte': 2.2.1
   astro: 1.0.0-beta.20
@@ -149,6 +151,12 @@ packages:
       - ts-node
       - typescript
       - vite
+    dev: true
+
+  /@astrojs/turbolinks/0.1.2:
+    resolution: {integrity: sha512-DixvDziQ8yvqz7lPx8jaUeJfXEMIc0tXg6cHH8ZpalQDSXcKSvlazN2Np/9IZ2MtzaBEbyzyvOM1sSbE18jj1Q==}
+    dependencies:
+      turbolinks: 5.2.0
     dev: true
 
   /@astrojs/webapi/0.11.1:
@@ -6694,6 +6702,10 @@ packages:
     hasBin: true
     dependencies:
       esbuild: 0.14.38
+    dev: true
+
+  /turbolinks/5.2.0:
+    resolution: {integrity: sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw==}
     dev: true
 
   /type-check/0.3.2:
