@@ -1,6 +1,6 @@
 {
   "name": "astro-blog-markdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "BSD-3-Clause",
   "description": "Astro blog Markdown: starter for fast Astro blog with partial hydration and a spot of Svelte speed. Create a new blog site in minutes",
