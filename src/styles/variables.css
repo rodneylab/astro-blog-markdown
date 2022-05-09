@@ -9,7 +9,7 @@
   --max-width-2xl: 42rem;
   --max-width-3xl: 48rem;
   --max-width-4xl: 56rem;
-  --max-width-full: '100%';
+  --max-width-full: 100%;
   --max-width-wrapper: var(--max-width-2xl);
   --desktop-breakpoint: var(--max-width-2xl);
 

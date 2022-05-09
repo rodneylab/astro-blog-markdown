@@ -259,7 +259,7 @@ figure figcaption {
 }
 
 /* Media queries */
-@media (max-width: var(--desktop-breakpoint)) {
+@media (max-width: 42rem) {
   h1 {
     font-size: var(--mobile-font-size-6);
   }

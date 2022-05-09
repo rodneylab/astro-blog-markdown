@@ -36,14 +36,16 @@ const { siteLanguage: lang } = website;
     flex-direction: column;
     justify-content: space-between;
     padding: var(--spacing-4) var(--spacing-0) var(--spacing-0);
-
     margin: var(--spacing-0) var(--spacing-4);
-    @media screen and (min-width: var(--desktop-breakpoint)) {
-      margin: var(--spacing-0) auto;
-    }
-
     min-height: 100vh;
   }
+
+  @media screen and (min-width: 42rem) {
+    .container {
+      margin: var(--spacing-0) auto;
+    }
+  }
+
   .main-container {
     max-width: var(--max-width-wrapper);
     width: var(--max-width-full);
