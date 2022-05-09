@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && subfont -ir --root dist",
+    "build": "astro telemetry disable && astro build && subfont -ir --root dist",
     "preview": "astro preview",
     "check": "astro check --fail-on-warnings",
     "check:svelte": "svelte-check --fail-on-hints",
@@ -20,10 +20,10 @@
     "@astrojs/turbolinks": "^0.1.2",
     "@commitlint/config-conventional": "^16.2.4",
     "@iconify/svelte": "^2.2.1",
-    "astro": "^1.0.0-beta.24",
+    "astro": "^1.0.0-beta.27",
     "autoprefixer": "^10.4.7",
     "commitlint": "^16.2.4",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "postcss": "^8.4.13",
     "postcss-html": "^1.4.1",
     "prettier": "^2.6.2",
@@ -33,7 +33,7 @@
     "subfont": "^6.4.2",
     "svelte": "^3.48.0",
     "svelte-check": "^2.7.0",
-    "vite": "^2.9.7"
+    "vite": "^2.9.8"
   },
   "repository": {
     "type": "git",
