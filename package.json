@@ -16,6 +16,7 @@
     "prettier:check": "prettier --check --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@astrojs/rss": "^0.2.0",
     "@astrojs/svelte": "^0.1.4",
     "@commitlint/config-conventional": "^17.0.2",
     "@iconify/svelte": "^2.2.1",
