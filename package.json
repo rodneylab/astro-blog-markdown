@@ -21,7 +21,7 @@
     "@astrojs/svelte": "^0.5.1",
     "@commitlint/config-conventional": "^17.0.3",
     "@iconify/svelte": "^2.2.1",
-    "astro": "^1.0.0-beta.64",
+    "astro": "1.0.0-rc.3",
     "autoprefixer": "^10.4.7",
     "commitlint": "^17.0.3",
     "husky": "^8.0.1",
