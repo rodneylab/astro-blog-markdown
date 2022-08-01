@@ -13,17 +13,17 @@ const { siteLanguage: lang } = website;
 
 <html {lang}>
   <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
-    <link rel='alternate icon' href='/favicon.ico' type='image/png' sizes='16x16' />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
     <title>{title}</title>
   </head>
   <SEO {metadescription} {slug} {title} />
-  <div class='container'>
+  <div class="container">
     <Header />
-    <main class='main-container'>
-      <slot></slot>
+    <main class="main-container">
+      <slot />
     </main>
     <Footer />
   </div>
