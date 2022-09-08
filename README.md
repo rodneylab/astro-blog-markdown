@@ -22,9 +22,7 @@ Starter for accessible, fast and SEO friendly Astro blog using a spot of Svelte.
 # Astro Blog Markdown
 
 ```
-git clone https://github.com/rodneylab/astro-blog-markdown
-cd astro-blog-markdown
-pnpm install
+pnpm create astro@latest -- --rodneylab/astro-blog-markdown
 cp .env.EXAMPLE .env
 pnpm run dev
 ```
