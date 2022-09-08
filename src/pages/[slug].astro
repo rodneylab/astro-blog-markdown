@@ -6,41 +6,41 @@ import BaseLayout from '$layouts/BaseLayout.astro';
  * @returns {Promise<{params: {slug: string;}; props: { content: string; title: string; metadescription: string;}}[]>}
  */
 export async function getStaticPaths() {
-  /** @type {Promise<{ Content: AstroComponent; frontmatter: {datePublished: string; postTitle: seoMetaDescription: string;}; file: URL;}[]>} */
-  const posts = await Astro.glob('../content/posts/**/index.md');
+	/** @type {Promise<{ Content: AstroComponent; frontmatter: {datePublished: string; postTitle: seoMetaDescription: string;}; file: URL;}[]>} */
+	const posts = await Astro.glob('../content/posts/**/index.md');
 
-  return posts.map(
-    ({ Content, file, frontmatter: { postTitle: title, seoMetaDescription: metadescription } }) => {
-      const slug = file.split('/').at(-2);
+	return posts.map(
+		({ Content, file, frontmatter: { postTitle: title, seoMetaDescription: metadescription } }) => {
+			const slug = file.split('/').at(-2);
 
-      return {
-        params: { slug },
-        props: { Content, title, metadescription },
-      };
-    },
-  );
+			return {
+				params: { slug },
+				props: { Content, title, metadescription },
+			};
+		},
+	);
 }
 
 const { Content, title, metadescription } = Astro.props;
 const { slug } = Astro.params;
 
 const seoProps = {
-  metadescription,
-  slug,
-  title,
+	metadescription,
+	slug,
+	title,
 };
 ---
 
 <BaseLayout {...seoProps}>
-  <h1>{title}</h1>
-  <div class="container">
-    <Content />
-  </div>
+	<h1>{title}</h1>
+	<div class="container">
+		<Content />
+	</div>
 </BaseLayout>
 
 <style>
-  .container {
-    max-width: var(--max-width-xl);
-    margin: var(--spacing-0) auto;
-  }
+	.container {
+		max-width: var(--max-width-xl);
+		margin: var(--spacing-0) auto;
+	}
 </style>

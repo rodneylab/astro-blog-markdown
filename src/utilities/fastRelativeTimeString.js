@@ -19,32 +19,32 @@ const year = day * 365;
  * @returns {string}
  */
 export function getRelativeTimeString(date, lang = navigator.language) {
-  const time = date instanceof Date ? date.getTime() : date;
-  const delta = Math.round((time - Date.now()) / 1000);
-  const absoluteDelta = Math.abs(delta);
-  /** @type {[number, Intl.RelativeTimeFormatUnit, number][]} */
-  const times = [
-    [minute, 'second', 1],
-    [hour, 'minute', minute],
-    [day, 'hour', hour],
-    [week, 'day', day],
-    [month, 'week', week],
-    [year, 'month', month],
-    [Infinity, 'year', year],
-  ];
-  let divider = year;
-  /** @type  {Intl.RelativeTimeFormatUnit} */
-  let timeType = 'year';
-  for (const [num, timeInterval, div] of times) {
-    if (absoluteDelta < num) {
-      divider = div;
-      timeType = timeInterval;
-      break;
-    }
-  }
-  const rtf = new Intl.RelativeTimeFormat(lang, {
-    numeric: 'auto',
-  });
+	const time = date instanceof Date ? date.getTime() : date;
+	const delta = Math.round((time - Date.now()) / 1000);
+	const absoluteDelta = Math.abs(delta);
+	/** @type {[number, Intl.RelativeTimeFormatUnit, number][]} */
+	const times = [
+		[minute, 'second', 1],
+		[hour, 'minute', minute],
+		[day, 'hour', hour],
+		[week, 'day', day],
+		[month, 'week', week],
+		[year, 'month', month],
+		[Infinity, 'year', year],
+	];
+	let divider = year;
+	/** @type  {Intl.RelativeTimeFormatUnit} */
+	let timeType = 'year';
+	for (const [num, timeInterval, div] of times) {
+		if (absoluteDelta < num) {
+			divider = div;
+			timeType = timeInterval;
+			break;
+		}
+	}
+	const rtf = new Intl.RelativeTimeFormat(lang, {
+		numeric: 'auto',
+	});
 
-  return rtf.format(Math.floor(delta / divider), timeType);
+	return rtf.format(Math.floor(delta / divider), timeType);
 }

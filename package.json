@@ -1,51 +1,51 @@
 {
-  "name": "astro-blog-markdown",
-  "version": "0.2.0",
-  "private": true,
-  "license": "BSD-3-Clause",
-  "description": "Astro blog Markdown: starter for fast Astro blog with partial hydration and a spot of Svelte speed. Create a new blog site in minutes",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro telemetry disable && astro build && subfont -ir --root dist",
-    "preview": "astro preview",
-    "check": "astro check --fail-on-warnings",
-    "check:svelte": "svelte-check --fail-on-hints",
-    "format": "prettier --write --plugin-search-dir=. .",
-    "lint:css": "stylelint \"src/**/*.{astro,css,svelte}\"",
-    "prettier:check": "prettier --check --plugin-search-dir=. ."
-  },
-  "devDependencies": {
-    "@astrojs/rss": "^1.0.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/svelte": "^1.0.0",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@iconify/svelte": "^2.2.1",
-    "astro": "1.1.7",
-    "autoprefixer": "^10.4.8",
-    "commitlint": "^17.1.2",
-    "husky": "^8.0.1",
-    "postcss": "^8.4.16",
-    "postcss-html": "^1.5.0",
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.4",
-    "stylelint": "^14.11.0",
-    "stylelint-config-recommended": "^9.0.0",
-    "subfont": "^6.12.0",
-    "svelte": "^3.50.0",
-    "svelte-check": "^2.9.0",
-    "typescript": "^4.8.2",
-    "vite": "^3.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rodneylab/astro-blog-markdown"
-  },
-  "bugs": {
-    "url": "https://github.com/rodneylab/astro-blog-markdown/issues"
-  },
-  "peerDependencies": {
-    "typescript": "^4.7.4",
-    "vite": "^2.9.14"
-  }
+	"name": "astro-blog-markdown",
+	"version": "0.2.0",
+	"private": true,
+	"license": "BSD-3-Clause",
+	"description": "Astro blog Markdown: starter for fast Astro blog with partial hydration and a spot of Svelte speed. Create a new blog site in minutes",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro telemetry disable && astro build && subfont -ir --root dist",
+		"preview": "astro preview",
+		"check": "astro check --fail-on-warnings",
+		"check:svelte": "svelte-check --fail-on-hints",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"lint:css": "stylelint \"src/**/*.{astro,css,svelte}\"",
+		"prettier:check": "prettier --check --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@astrojs/rss": "^1.0.0",
+		"@astrojs/sitemap": "^1.0.0",
+		"@astrojs/svelte": "^1.0.0",
+		"@commitlint/config-conventional": "^17.1.0",
+		"@iconify/svelte": "^2.2.1",
+		"astro": "1.1.7",
+		"autoprefixer": "^10.4.8",
+		"commitlint": "^17.1.2",
+		"husky": "^8.0.1",
+		"postcss": "^8.4.16",
+		"postcss-html": "^1.5.0",
+		"prettier": "^2.7.1",
+		"prettier-plugin-astro": "^0.5.4",
+		"stylelint": "^14.11.0",
+		"stylelint-config-recommended": "^9.0.0",
+		"subfont": "^6.12.0",
+		"svelte": "^3.50.0",
+		"svelte-check": "^2.9.0",
+		"typescript": "^4.8.2",
+		"vite": "^3.1.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rodneylab/astro-blog-markdown"
+	},
+	"bugs": {
+		"url": "https://github.com/rodneylab/astro-blog-markdown/issues"
+	},
+	"peerDependencies": {
+		"typescript": "^4.7.4",
+		"vite": "^2.9.14"
+	}
 }
