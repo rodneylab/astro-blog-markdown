@@ -1,11 +1,11 @@
 ---
-import '$styles/normalise.css';
-import '$styles/variables.css';
-import '$styles/styles.css';
-import Footer from '$components/Footer.svelte';
-import Header from '$components/Header.svelte';
-import SEO from '$components//SEO/index.astro';
-import website from '$config/website';
+import '~styles/normalise.css';
+import '~styles/variables.css';
+import '~styles/styles.css';
+import Footer from '~components/Footer.svelte';
+import Header from '~components/Header.svelte';
+import SEO from '~components//SEO/index.astro';
+import website from '~config/website';
 
 const { metadescription, slug, title } = Astro.props;
 const { siteLanguage: lang } = website;

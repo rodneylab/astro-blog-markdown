@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '$layouts/BaseLayout.astro';
-import BlogRoll from '$components/BlogRoll.svelte';
-import Card from '$components/Card.svelte';
+import BaseLayout from '~layouts/BaseLayout.astro';
+import BlogRoll from '~components/BlogRoll.svelte';
+import Card from '~components/Card.svelte';
 
 /** @type {Promise<{frontmatter: {datePublished: string; postTitle: string; seoMetaDescription: string; }file: string;}[]>} */
 const rawPosts = await Astro.glob('../content/posts/**/index.md');

@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import website from '$config/website';
+import website from '~config/website';
 
 const { siteTitle, siteUrl } = website;
 
