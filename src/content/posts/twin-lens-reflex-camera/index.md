@@ -9,8 +9,8 @@ featuredImageAlt: 'Photograph of a Rolleicord twin Lens reflex camera'
 ogImage: 'twin-lens-reflex-camera-open-graph.jpg'
 ogSquareImage: 'twin-lens-reflex-camera-open-graph-square.jpg'
 twitterImage: 'twin-lens-reflex-camera-twitter.jpg'
-categories: ''
-tags: ''
+categories: []
+tags: []
 draft: false
 ---
 

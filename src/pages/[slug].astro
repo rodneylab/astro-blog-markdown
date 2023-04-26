@@ -1,29 +1,26 @@
 ---
 import BaseLayout from '~layouts/BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-/**
- * Astro API see: https://docs.astro.build/en/reference/api-reference/#getstaticpaths
- * @returns {Promise<{params: {slug: string;}; props: { content: string; title: string; metadescription: string;}}[]>}
- */
 export async function getStaticPaths() {
-	/** @type {Promise<{ Content: AstroComponent; frontmatter: {datePublished: string; postTitle: seoMetaDescription: string;}; file: URL;}[]>} */
-	const posts = await Astro.glob('../content/posts/**/index.md');
-
-	return posts.map(
-		({ Content, file, frontmatter: { postTitle: title, seoMetaDescription: metadescription } }) => {
-			const slug = file.split('/').at(-2);
-
-			return {
-				params: { slug },
-				props: { Content, title, metadescription },
-			};
-		},
-	);
+	const posts = await getCollection('posts');
+	return posts.map(({ data: { postTitle, seoMetaDescription }, render, slug }) => {
+		return {
+			params: { slug },
+			props: { seoMetaDescription, render, postTitle },
+		};
+	});
 }
 
-const { Content, title, metadescription } = Astro.props;
-const { slug } = Astro.params;
+type PostCollection = CollectionEntry<'posts'>;
+type Props = Pick<PostCollection['data'], 'seoMetaDescription' | 'postTitle'> &
+	Pick<PostCollection, 'render'>;
 
+const { slug } = Astro.params;
+const { seoMetaDescription: metadescription, render, postTitle: title }: Props = Astro.props;
+
+const { Content } = await render();
 const seoProps = {
 	metadescription,
 	slug,

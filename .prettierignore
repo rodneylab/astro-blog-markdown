@@ -3,4 +3,5 @@ dist/**
 target/**
 node_modules/**
 pnpm-lock.yaml
+.astro/**
 .netlify

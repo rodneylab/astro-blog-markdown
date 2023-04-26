@@ -1,4 +1,5 @@
 import website from '~config/website';
+import { getCollection } from 'astro:content';
 
 const { siteUrl } = website;
 
@@ -7,16 +8,19 @@ export async function get({ request }) {
 	const { hostname, port, protocol } = new URL(url);
 
 	const baseUrl = import.meta.env.PROD ? siteUrl : `${protocol}//${hostname}:${port}`;
-	const postModules = await import.meta.glob('../content/posts/**/index.md');
-	const posts = await Promise.all(Object.keys(postModules).map((path) => postModules[path]()));
-	const postsXmlString = posts.map(({ file, frontmatter: { lastUpdated } }) => {
-		const slug = file.split('/').at(-2);
-		return `
+	const postsXmlString = (await getCollection('posts'))
+		.sort(
+			({ data: { datePublished: datePublishedA } }, { data: { datePublished: datePublishedB } }) =>
+				new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
+		)
+		.map(
+			({ data: { lastUpdated }, slug }) =>
+				`
 <url>
   <loc>${baseUrl}/${slug}/</loc>
   <lastmod>${new Date(lastUpdated).toISOString()}</lastmod>
-</url>`;
-	});
+</url>`,
+		);
 
 	const xmlString = `
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="${baseUrl}/sitemap.xsl"?>

@@ -9,8 +9,8 @@ featuredImageAlt: 'Photograph of a classic folding camera'
 ogImage: 'folding-camera-open-graph.jpg'
 ogSquareImage: 'folding-camera-open-graph-square.jpg'
 twitterImage: 'folding-camera-twitter.jpg'
-categories: ''
-tags: ''
+categories: []
+tags: []
 draft: false
 ---
 

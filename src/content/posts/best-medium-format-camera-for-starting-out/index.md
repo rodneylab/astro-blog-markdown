@@ -9,8 +9,8 @@ featuredImageAlt: 'Photograph of a Hasselblad medium format camera with the focu
 ogImage: 'best-medium-format-camera-for-starting-out-open-graph.jpg'
 ogSquareImage: 'best-medium-format-camera-for-starting-out-open-graph-square.jpg'
 twitterImage: 'best-medium-format-camera-for-starting-out-twitter.jpg'
-categories: ''
-tags: ''
+categories: []
+tags: []
 draft: false
 ---
 

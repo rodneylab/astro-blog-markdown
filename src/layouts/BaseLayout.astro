@@ -11,7 +11,7 @@ const { metadescription, slug, title } = Astro.props;
 const { siteLanguage: lang } = website;
 ---
 
-<html {lang}>
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />

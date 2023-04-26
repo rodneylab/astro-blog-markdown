@@ -2,22 +2,19 @@
 import BaseLayout from '~layouts/BaseLayout.astro';
 import BlogRoll from '~components/BlogRoll.svelte';
 import Card from '~components/Card.svelte';
+import { getCollection } from 'astro:content';
 
-/** @type {Promise<{frontmatter: {datePublished: string; postTitle: string; seoMetaDescription: string; }file: string;}[]>} */
-const rawPosts = await Astro.glob('../content/posts/**/index.md');
-const sortedRawPosts = rawPosts.sort(
-	(
-		{ frontmatter: { datePublished: datePublishedA } },
-		{ frontmatter: { datePublished: datePublishedB } },
-	) => new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
-);
-
-const posts = sortedRawPosts.map(
-	({ frontmatter: { datePublished, postTitle, seoMetaDescription }, file }) => {
-		const slug = file.split('/').at(-2);
-		return { datePublished, postTitle, seoMetaDescription, slug };
-	},
-);
+const posts = (await getCollection('posts'))
+	.sort(
+		({ data: { datePublished: datePublishedA } }, { data: { datePublished: datePublishedB } }) =>
+			new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
+	)
+	.map(({ data: { datePublished, postTitle, seoMetaDescription }, slug }) => ({
+		datePublished,
+		postTitle,
+		seoMetaDescription,
+		slug,
+	}));
 
 const seoProps = {
 	metadescription:
@@ -39,7 +36,7 @@ const seoProps = {
 			off onto you.
 		</p>
 	</Card>
-	<BlogRoll client:visible initialPosts={4} {posts} />
+	<BlogRoll client:visible initialPosts={4} posts={posts} />
 </BaseLayout>
 
 <style>
