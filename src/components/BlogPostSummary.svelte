@@ -37,6 +37,7 @@
 </script>
 
 <div
+	role="presentation"
 	class="container"
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
