@@ -15,7 +15,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba727efb-61da-4338-94fa-15cf51fdd924/deploy-status)](https://app.netlify.com/sites/jazzy-pixie-b363bf/deploys)
 
-Starter for accessible, fast and SEO friendly Astro blog using a spot of Svelte. See post on <a aria-label="Open article on using the Astro blog starter" href="https://rodneylab.com/astro-blog-markdown/">how to get up and running on the Astro blog starter</a>.
+Starter for accessible, fast and SEO friendly Astro blog using a spot of Svelte.
+See post on
+<a aria-label="Open article on using the Astro blog starter" href="https://rodneylab.com/astro-blog-markdown/">how
+to get up and running on the Astro blog starter</a>.
 
 <img src="./images/astro-blog-markdown-lighthouse.png" alt="Lighthouse scores for 100 in each category">
 
@@ -39,4 +42,5 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run build`               | Build your production site to `./dist/`      |
 | `pnpm run preview`             | Preview your build locally, before deploying |
 
-Feel free to jump into the [Rodney Lab matrix chat room](https://matrix.to/#/%23rodney:matrix.org).
+Feel free to jump into the
+[Rodney Lab matrix chat room](https://matrix.to/#/%23rodney:matrix.org).

@@ -13,7 +13,6 @@ const year = day * 365;
  */
 
 /**
- *
  * @param {Date|number} date
  * @param {string} lang
  * @returns {string}

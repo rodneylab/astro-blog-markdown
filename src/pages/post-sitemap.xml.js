@@ -14,8 +14,7 @@ export async function get({ request }) {
 				new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
 		)
 		.map(
-			({ data: { lastUpdated }, slug }) =>
-				`
+			({ data: { lastUpdated }, slug }) => `
 <url>
   <loc>${baseUrl}/${slug}/</loc>
   <lastmod>${new Date(lastUpdated).toISOString()}</lastmod>
