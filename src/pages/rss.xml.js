@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 
 const { siteTitle, siteUrl } = website;
 
-export async function get() {
+export async function GET() {
 	const items = (await getCollection('posts'))
 		.sort(
 			({ data: { datePublished: datePublishedA } }, { data: { datePublished: datePublishedB } }) =>

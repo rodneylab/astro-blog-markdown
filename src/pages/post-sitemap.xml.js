@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 const { siteUrl } = website;
 
-export async function get({ request }) {
+export async function GET({ request }) {
 	const { url } = request;
 	const { hostname, port, protocol } = new URL(url);
 
