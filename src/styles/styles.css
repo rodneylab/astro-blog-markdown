@@ -256,6 +256,13 @@ a:focus {
 	word-wrap: normal !important;
 }
 
+img,
+picture {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 figure {
 	margin-bottom: var(--spacing-6);
 	padding-bottom: var(--spacing-6);
@@ -298,5 +305,17 @@ figure figcaption {
 	ul,
 	ol {
 		list-style-position: inside;
+	}
+}
+
+.image-wrapper {
+	display: grid;
+
+	.placeholder,
+	.image {
+		display: block;
+		grid-area: 1/1/1/1;
+		height: auto;
+		aspect-ratio: 3/2;
 	}
 }

@@ -36,7 +36,6 @@
 		"svelte-check": "^3.5.2",
 		"thumbhash": "^0.1.1",
 		"typescript": "^5.2.2",
-		"vanilla-lazyload": "^17.8.5",
 		"vite": "^4.5.0"
 	},
 	"repository": {

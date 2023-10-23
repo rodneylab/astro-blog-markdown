@@ -1,24 +1,48 @@
 ---
-import BaseLayout from '~layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import BaseLayout from '~layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts');
-	return posts.map(({ data: { postTitle, seoMetaDescription }, render, slug }) => {
-		return {
-			params: { slug },
-			props: { seoMetaDescription, render, postTitle },
-		};
-	});
+	return posts.map(
+		({
+			data: { featuredImage, featuredImageAlt, placeholder, postTitle, seoMetaDescription },
+			render,
+			slug,
+		}) => {
+			return {
+				params: { slug },
+				props: {
+					featuredImage,
+					featuredImageAlt,
+					placeholder,
+					seoMetaDescription,
+					render,
+					postTitle,
+				},
+			};
+		},
+	);
 }
 
 type PostCollection = CollectionEntry<'posts'>;
-type Props = Pick<PostCollection['data'], 'seoMetaDescription' | 'postTitle'> &
+type Props = Pick<
+	PostCollection['data'],
+	'featuredImage' | 'featuredImageAlt' | 'seoMetaDescription' | 'placeholder' | 'postTitle'
+> &
 	Pick<PostCollection, 'render'>;
 
 const { slug } = Astro.params;
-const { seoMetaDescription: metadescription, render, postTitle: title }: Props = Astro.props;
+const {
+	featuredImage,
+	featuredImageAlt,
+	seoMetaDescription: metadescription,
+	render,
+	placeholder,
+	postTitle: title,
+}: Props = Astro.props;
 
 const { Content } = await render();
 const seoProps = {
@@ -26,10 +50,25 @@ const seoProps = {
 	slug,
 	title,
 };
+
+const { format, width, height } = featuredImage;
 ---
 
 <BaseLayout {...seoProps}>
 	<h1>{title}</h1>
+	<div class="image-wrapper">
+		<img class="placeholder" aria-hidden="true" src={placeholder} width={width} height={height} />
+		<Picture
+			pictureAttributes={{ class: 'image lazy' }}
+			src={featuredImage}
+			alt={featuredImageAlt}
+			densities={[1.5, 2]}
+			formats={['avif', 'webp']}
+			fallbackFormat={format}
+			loading="eager"
+		/>
+	</div>
+
 	<div class="container">
 		<Content />
 	</div>
