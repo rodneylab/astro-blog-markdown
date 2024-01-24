@@ -16,27 +16,27 @@
 		"prettier:check": "prettier --check --plugin=prettier-plugin-astro ."
 	},
 	"devDependencies": {
-		"@astrojs/rss": "^3.0.0",
-		"@astrojs/svelte": "^4.0.3",
-		"@commitlint/config-conventional": "^18.4.2",
-		"@iconify/svelte": "^3.1.4",
-		"@rodneylab/picpack": "^0.0.4",
-		"astro": "3.5.4",
-		"autoprefixer": "^10.4.16",
-		"commitlint": "^18.4.2",
+		"@astrojs/rss": "^4.0.3",
+		"@astrojs/svelte": "^5.0.3",
+		"@commitlint/config-conventional": "^18.5.0",
+		"@iconify/svelte": "^3.1.6",
+		"@rodneylab/picpack": "^0.1.1",
+		"astro": "4.2.4",
+		"autoprefixer": "^10.4.17",
+		"commitlint": "^18.5.0",
 		"husky": "^8.0.3",
-		"postcss": "^8.4.31",
-		"postcss-html": "^1.5.0",
-		"prettier": "^3.1.0",
-		"prettier-plugin-astro": "^0.12.2",
-		"stylelint": "^15.11.0",
-		"stylelint-config-recommended": "^13.0.0",
+		"postcss": "^8.4.33",
+		"postcss-html": "^1.6.0",
+		"prettier": "^3.2.4",
+		"prettier-plugin-astro": "^0.13.0",
+		"stylelint": "^16.2.0",
+		"stylelint-config-recommended": "^14.0.0",
 		"subfont": "^7.1.1",
-		"svelte": "^4.2.3",
-		"svelte-check": "^3.6.0",
+		"svelte": "^4.2.9",
+		"svelte-check": "^3.6.3",
 		"thumbhash": "^0.1.1",
-		"typescript": "^5.2.2",
-		"vite": "^4.5.0"
+		"typescript": "^5.3.3",
+		"vite": "^5.0.12"
 	},
 	"repository": {
 		"type": "git",
@@ -44,5 +44,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/rodneylab/astro-blog-markdown/issues"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.4.1"
 	}
 }
