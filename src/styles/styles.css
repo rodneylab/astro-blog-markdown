@@ -310,12 +310,11 @@ figure figcaption {
 
 .image-wrapper {
 	display: grid;
+}
 
-	.placeholder,
-	.image {
-		display: block;
-		grid-area: 1/1/1/1;
-		height: auto;
-		aspect-ratio: 3/2;
-	}
+.image-wrapper :is(.placeholder, picture) {
+	display: block;
+	grid-area: 1/1/1/1;
+	height: auto;
+	aspect-ratio: 3/2;
 }

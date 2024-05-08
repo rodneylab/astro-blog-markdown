@@ -35,5 +35,10 @@ ${pages.map(
 )}
 </urlset>`.trim();
 
-	return { body: xmlString };
+	return new Response(xmlString, {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/xml',
+		},
+	});
 }

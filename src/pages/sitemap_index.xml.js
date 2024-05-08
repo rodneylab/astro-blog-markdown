@@ -30,5 +30,10 @@ export async function GET({ request }) {
 	</sitemap>
 </sitemapindex>`.trim();
 
-	return { body: xmlString };
+	return new Response(xmlString, {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/xml',
+		},
+	});
 }

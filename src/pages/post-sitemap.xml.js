@@ -28,5 +28,10 @@ export async function GET({ request }) {
 ${postsXmlString.join('\n')}
 </urlset>`.trim();
 
-	return { body: xmlString };
+	return new Response(xmlString, {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/xml',
+		},
+	});
 }
