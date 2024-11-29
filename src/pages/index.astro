@@ -1,46 +1,49 @@
 ---
-import BaseLayout from '~layouts/BaseLayout.astro';
-import BlogRoll from '~components/BlogRoll.svelte';
-import Card from '~components/Card.svelte';
-import { getCollection } from 'astro:content';
+import BaseLayout from "~layouts/BaseLayout.astro";
+import BlogRoll from "~components/BlogRoll.svelte";
+import Card from "~components/Card.svelte";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('posts'))
-	.sort(
-		({ data: { datePublished: datePublishedA } }, { data: { datePublished: datePublishedB } }) =>
-			new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
-	)
-	.map(({ data: { datePublished, postTitle, seoMetaDescription }, slug }) => ({
-		datePublished,
-		postTitle,
-		seoMetaDescription,
-		slug,
-	}));
+const posts = (await getCollection("posts"))
+  .sort(
+    (
+      { data: { datePublished: datePublishedA } },
+      { data: { datePublished: datePublishedB } },
+    ) =>
+      new Date(datePublishedB).valueOf() - new Date(datePublishedA).valueOf(),
+  )
+  .map(({ data: { datePublished, postTitle, seoMetaDescription }, slug }) => ({
+    datePublished,
+    postTitle,
+    seoMetaDescription,
+    slug,
+  }));
 
 const seoProps = {
-	metadescription:
-		'Astro Blog Markdown Starter - starter code by Rodney Lab to help you get going on your next blog site',
-	slug: '',
-	title: 'Home',
+  metadescription:
+    "Astro Blog Markdown Starter - starter code by Rodney Lab to help you get going on your next blog site",
+  slug: "",
+  title: "Home",
 };
 ---
 
 <BaseLayout {...seoProps}>
-	<header>
-		<h1>Climate &mdash; Astro Starter</h1>
-		<h2>Astro Svelte Markdown Blog</h2>
-	</header><Card>
-		<h2 class="heading">About me</h2>
-		<p>
-			I live and breathe analogue photography. I show you my favourite analogue film cameras on this
-			site. Hopefully if you are not into analogue photography yet, some of my enthusiasm will rub
-			off onto you.
-		</p>
-	</Card>
-	<BlogRoll client:visible initialPosts={4} posts={posts} />
+  <header>
+    <h1>Climate &mdash; Astro Starter</h1>
+    <h2>Astro Svelte Markdown Blog</h2>
+  </header><Card>
+    <h2 class="heading">About me</h2>
+    <p>
+      I live and breathe analogue photography. I show you my favourite analogue
+      film cameras on this site. Hopefully if you are not into analogue
+      photography yet, some of my enthusiasm will rub off onto you.
+    </p>
+  </Card>
+  <BlogRoll client:visible initialPosts={4} posts={posts} />
 </BaseLayout>
 
 <style>
-	.heading {
-		margin-top: var(--spacing-0);
-	}
+  .heading {
+    margin-top: var(--spacing-0);
+  }
 </style>

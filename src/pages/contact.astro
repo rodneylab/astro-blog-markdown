@@ -1,94 +1,94 @@
 ---
-import BaseLayout from '~layouts/BaseLayout.astro';
-import Card from '~components/Card.svelte';
-import EmailIcon from '~components/Icons/Email.svelte';
-import ExternalLink from '~components/ExternalLink.svelte';
-import FacebookIcon from '~components/Icons/Facebook.svelte';
-import WireIcon from '~components/Icons/Wire.svelte';
-import TelegramIcon from '~components/Icons/Telegram.svelte';
-import TwitterIcon from '~components/Icons/Twitter.svelte';
-import website from '~config/website';
+import BaseLayout from "~layouts/BaseLayout.astro";
+import Card from "~components/Card.svelte";
+import EmailIcon from "~components/Icons/Email.svelte";
+import ExternalLink from "~components/ExternalLink.svelte";
+import FacebookIcon from "~components/Icons/Facebook.svelte";
+import WireIcon from "~components/Icons/Wire.svelte";
+import TelegramIcon from "~components/Icons/Telegram.svelte";
+import TwitterIcon from "~components/Icons/Twitter.svelte";
+import website from "~config/website";
 const {
-	contactEmail,
-	facebookPageName,
-	telegramUsername,
-	twitterUserId,
-	twitterUsername,
-	wireUsername,
+  contactEmail,
+  facebookPageName,
+  telegramUsername,
+  twitterUserId,
+  twitterUsername,
+  wireUsername,
 } = website;
 
 const seoProps = {
-	metadescription:
-		'Get in touch with Rodneylab, the developer of Climate Astro Blog Markdown Starter.',
-	slug: 'contact',
-	title: 'Contact',
+  metadescription:
+    "Get in touch with Rodneylab, the developer of Climate Astro Blog Markdown Starter.",
+  slug: "contact",
+  title: "Contact",
 };
 ---
 
 <BaseLayout {...seoProps}>
-	<Card>
-		<h1>Contact me</h1>
-		<p>I would love to hear from you. Please get in touch!</p>
-		<div class="contact-details">
-			<ul>
-				<li>
-					<span class="icon"><EmailIcon /></span>
-					<span class="contact-address">{contactEmail}</span>
-				</li>
-				<li>
-					<span class="icon"><FacebookIcon /></span><ExternalLink
-						ariaLabel="D M Rodney Lab on Facebook Messenger"
-						href={`https://m.me.${facebookPageName}`}
-					>
-						<span class="contact-address"> {facebookPageName}</span>
-					</ExternalLink>
-				</li>
-				<li>
-					<span class="icon"><TwitterIcon /></span><ExternalLink
-						ariaLabel="D M Rodney Lab on Twitter"
-						href={`https://twitter.com/messages/compose?recipient-id=${twitterUserId}`}
-					>
-						<span class="contact-address">@{twitterUsername}</span>
-					</ExternalLink>
-				</li>
-				<li>
-					<span class="icon"><TelegramIcon /></span><ExternalLink
-						ariaLabel="Message Rodney Lab on Telegram"
-						href={`https://t.me/${telegramUsername}`}
-					>
-						<span class="contact-address">{telegramUsername}</span>
-					</ExternalLink>
-				</li>
-				<li>
-					<span class="icon"><WireIcon /></span>
-					<span class="contact-address">{wireUsername}</span>
-				</li>
-			</ul>
-		</div>
-	</Card>
+  <Card>
+    <h1>Contact me</h1>
+    <p>I would love to hear from you. Please get in touch!</p>
+    <div class="contact-details">
+      <ul>
+        <li>
+          <span class="icon"><EmailIcon /></span>
+          <span class="contact-address">{contactEmail}</span>
+        </li>
+        <li>
+          <span class="icon"><FacebookIcon /></span><ExternalLink
+            ariaLabel="D M Rodney Lab on Facebook Messenger"
+            href={`https://m.me.${facebookPageName}`}
+          >
+            <span class="contact-address"> {facebookPageName}</span>
+          </ExternalLink>
+        </li>
+        <li>
+          <span class="icon"><TwitterIcon /></span><ExternalLink
+            ariaLabel="D M Rodney Lab on Twitter"
+            href={`https://twitter.com/messages/compose?recipient-id=${twitterUserId}`}
+          >
+            <span class="contact-address">@{twitterUsername}</span>
+          </ExternalLink>
+        </li>
+        <li>
+          <span class="icon"><TelegramIcon /></span><ExternalLink
+            ariaLabel="Message Rodney Lab on Telegram"
+            href={`https://t.me/${telegramUsername}`}
+          >
+            <span class="contact-address">{telegramUsername}</span>
+          </ExternalLink>
+        </li>
+        <li>
+          <span class="icon"><WireIcon /></span>
+          <span class="contact-address">{wireUsername}</span>
+        </li>
+      </ul>
+    </div>
+  </Card>
 </BaseLayout>
 
 <style>
-	.contact-details {
-		list-style-type: none;
+  .contact-details {
+    list-style-type: none;
 
-		ul {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-			li {
-				display: inline;
-				padding-left: var(--spacing-2);
-				font-size: var(--font-size-2);
-			}
-		}
-	}
+      li {
+        display: inline;
+        padding-left: var(--spacing-2);
+        font-size: var(--font-size-2);
+      }
+    }
+  }
 
-	.icon {
-		vertical-align: middle;
-	}
-	.contact-address {
-		margin-left: var(--spacing-2);
-	}
+  .icon {
+    vertical-align: middle;
+  }
+  .contact-address {
+    margin-left: var(--spacing-2);
+  }
 </style>

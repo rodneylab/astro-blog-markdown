@@ -1,23 +1,27 @@
-import website from '~config/website';
-import { getCollection } from 'astro:content';
+import website from "~config/website";
+import { getCollection } from "astro:content";
 
 const { siteUrl } = website;
 
 export async function GET({ request }) {
-	const { url } = request;
-	const { hostname, port, protocol } = new URL(url);
-	const baseUrl = import.meta.env.PROD ? siteUrl : `${protocol}//${hostname}:${port}`;
+  const { url } = request;
+  const { hostname, port, protocol } = new URL(url);
+  const baseUrl = import.meta.env.PROD
+    ? siteUrl
+    : `${protocol}//${hostname}:${port}`;
 
-	const lastPostUpdate = (await getCollection('posts')).reduce(
-		(accumulator, { data: { lastUpdated } }) => {
-			const lastPostUpdatedValue = Date.parse(lastUpdated);
-			return lastPostUpdatedValue > accumulator ? lastPostUpdatedValue : accumulator;
-		},
-		0,
-	);
-	const lastPostUpdateDate = new Date(lastPostUpdate).toISOString();
+  const lastPostUpdate = (await getCollection("posts")).reduce(
+    (accumulator, { data: { lastUpdated } }) => {
+      const lastPostUpdatedValue = Date.parse(lastUpdated);
+      return lastPostUpdatedValue > accumulator
+        ? lastPostUpdatedValue
+        : accumulator;
+    },
+    0,
+  );
+  const lastPostUpdateDate = new Date(lastPostUpdate).toISOString();
 
-	const xmlString = `
+  const xmlString = `
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="${baseUrl}/sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
@@ -30,10 +34,10 @@ export async function GET({ request }) {
 	</sitemap>
 </sitemapindex>`.trim();
 
-	return new Response(xmlString, {
-		status: 200,
-		headers: {
-			'Content-Type': 'application/xml',
-		},
-	});
+  return new Response(xmlString, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }

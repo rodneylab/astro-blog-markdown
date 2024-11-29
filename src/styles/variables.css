@@ -1,89 +1,89 @@
 :root {
-	/* Widths */
-	--max-width-none: 'none';
-	--max-width-xs: 20rem;
-	--max-width-sm: 24rem;
-	--max-width-md: 28rem;
-	--max-width-lg: 32rem;
-	--max-width-xl: 36rem;
-	--max-width-2xl: 42rem;
-	--max-width-3xl: 48rem;
-	--max-width-4xl: 56rem;
-	--max-width-full: 100%;
-	--max-width-wrapper: var(--max-width-2xl);
-	--desktop-breakpoint: var(--max-width-2xl);
+  /* Widths */
+  --max-width-none: "none";
+  --max-width-xs: 20rem;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
+  --max-width-2xl: 42rem;
+  --max-width-3xl: 48rem;
+  --max-width-4xl: 56rem;
+  --max-width-full: 100%;
+  --max-width-wrapper: var(--max-width-2xl);
+  --desktop-breakpoint: var(--max-width-2xl);
 
-	/* Spacing */
-	--spacing-px: 0.0625rem;
-	--spacing-px-2: 0.125rem;
-	--spacing-0: 0;
-	--spacing-1: 0.25rem;
-	--spacing-2: 0.5rem;
-	--spacing-3: 0.75rem;
-	--spacing-4: 1rem;
-	--spacing-5: 1.25rem;
-	--spacing-6: 1.5rem;
-	--spacing-8: 2rem;
-	--spacing-10: 2.5rem;
-	--spacing-12: 3rem;
-	--spacing-16: 4rem;
-	--spacing-20: 5rem;
-	--spacing-24: 6rem;
-	--spacing-32: 8rem;
+  /* Spacing */
+  --spacing-px: 0.0625rem;
+  --spacing-px-2: 0.125rem;
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
 
-	/* Fonts */
-	--font-family-serif: 'Source Sans Pro', 'Lustria', 'Noto Serif', 'Merriweather', 'Georgia',
-		'Cambria', 'Times New Roman', 'Times', serif;
-	--font-body: var(--font-family-serif);
-	--font-heading: 'Lora', var(--font-family-serif);
+  /* Fonts */
+  --font-family-serif: "Source Sans Pro", "Lustria", "Noto Serif",
+    "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  --font-body: var(--font-family-serif);
+  --font-heading: "Lora", var(--font-family-serif);
 
-	/* Font Weight */
-	--font-weight-light: 300;
-	--font-weight-normal: 400;
-	--font-weight-medium: 500;
-	--font-weight-semibold: 600;
-	--font-weight-bold: 700;
-	--font-weight-extrabold: 800;
-	--font-weight-black: 900;
+  /* Font Weight */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
-	/* Font Size */
-	--font-size-root: 16px;
-	--font-size-0: 0.8rem;
-	--font-size-1: 1rem;
-	--font-size-2: 1.25rem;
-	--font-size-3: 1.563rem;
-	--font-size-4: 1.953rem;
-	--font-size-5: 2.441rem;
-	--font-size-6: 3.052rem;
-	--font-size-7: 3.815rem;
+  /* Font Size */
+  --font-size-root: 16px;
+  --font-size-0: 0.8rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.25rem;
+  --font-size-3: 1.563rem;
+  --font-size-4: 1.953rem;
+  --font-size-5: 2.441rem;
+  --font-size-6: 3.052rem;
+  --font-size-7: 3.815rem;
 
-	--mobile-font-size-0: 0.8889rem;
-	--mobile-font-size-1: 1rem;
-	--mobile-font-size-2: 1.125rem;
-	--mobile-font-size-3: 1.266rem;
-	--mobile-font-size-4: 1.424rem;
-	--mobile-font-size-5: 1.602rem;
-	--mobile-font-size-6: 1.802rem;
-	--mobile-font-size-7: 3.815rem;
+  --mobile-font-size-0: 0.8889rem;
+  --mobile-font-size-1: 1rem;
+  --mobile-font-size-2: 1.125rem;
+  --mobile-font-size-3: 1.266rem;
+  --mobile-font-size-4: 1.424rem;
+  --mobile-font-size-5: 1.602rem;
+  --mobile-font-size-6: 1.802rem;
+  --mobile-font-size-7: 3.815rem;
 
-	/* Line Height */
-	--line-height-none: 1;
-	--line-height-tight: 1.3;
-	--line-height-normal: 1.5;
-	--line-height-relaxed: 1.75;
+  /* Line Height */
+  --line-height-none: 1;
+  --line-height-tight: 1.3;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
 
-	/* Colours */
-	--color-theme-1: hsl(0 69% 50%); /* maximum red */
-	--color-theme-2: hsl(200 100% 68); /* maya blue */
-	--color-theme-3: hsl(54 100% 73%); /* corn */
-	--color-theme-4: hsl(216 64% 29%); /* dark cornflower blue */
+  /* Colours */
+  --color-theme-1: hsl(0 69% 50%); /* maximum red */
+  --color-theme-2: hsl(200 100% 68); /* maya blue */
+  --color-theme-3: hsl(54 100% 73%); /* corn */
+  --color-theme-4: hsl(216 64% 29%); /* dark cornflower blue */
 
-	--color-theme-4-alpha-20: hsl(216 64% 29% / 0.2);
+  --color-theme-4-alpha-20: hsl(216 64% 29% / 0.2);
 
-	--color-text: hsl(207 43% 9%); /* rich black FOGRA 29 */
-	--color-heading: var(--color-theme-4);
-	--color-heading-black: var(--color-theme-4);
-	--color-accent: hsl(100 100% 99%); /* baby powder */
-	--color-success: hsl(174 62% 47%); /* tiffany blue */
-	--color-danger: hsl(353 81% 51%); /* rose madder */
+  --color-text: hsl(207 43% 9%); /* rich black FOGRA 29 */
+  --color-heading: var(--color-theme-4);
+  --color-heading-black: var(--color-theme-4);
+  --color-accent: hsl(100 100% 99%); /* baby powder */
+  --color-success: hsl(174 62% 47%); /* tiffany blue */
+  --color-danger: hsl(353 81% 51%); /* rose madder */
 }
