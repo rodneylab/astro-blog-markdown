@@ -1,11 +1,11 @@
 {
-	"infiniteLoopProtection": true,
-	"hardReloadOnChange": false,
-	"view": "browser",
-	"template": "node",
-	"container": {
-		"port": 4321,
-		"startScript": "start",
-		"node": "20"
-	}
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "browser",
+  "template": "node",
+  "container": {
+    "port": 4321,
+    "startScript": "start",
+    "node": "20"
+  }
 }

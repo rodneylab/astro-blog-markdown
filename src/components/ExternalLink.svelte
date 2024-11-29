@@ -1,6 +1,6 @@
 <script>
-  export let rel = 'nofollow noopener noreferrer';
-  export let target = '_blank';
+  export let rel = "nofollow noopener noreferrer";
+  export let target = "_blank";
   export let href;
   export let ariaLabel;
 </script>

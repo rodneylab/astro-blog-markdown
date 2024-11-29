@@ -1,55 +1,60 @@
 ---
-import '~styles/normalise.css';
-import '~styles/variables.css';
-import '~styles/styles.css';
-import Footer from '~components/Footer.svelte';
-import Header from '~components/Header.svelte';
-import SEO from '~components//SEO/index.astro';
-import website from '~config/website';
+import "~styles/normalise.css";
+import "~styles/variables.css";
+import "~styles/styles.css";
+import Footer from "~components/Footer.svelte";
+import Header from "~components/Header.svelte";
+import SEO from "~components//SEO/index.astro";
+import website from "~config/website";
 
 const { metadescription, slug, title } = Astro.props;
 const { siteLanguage: lang } = website;
 ---
 
 <html lang={lang}>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="16x16" />
-		<title>{title}</title>
-	</head>
-	<SEO {metadescription} {slug} {title} />
-	<div class="container">
-		<Header />
-		<main class="main-container">
-			<slot />
-		</main>
-		<Footer />
-	</div>
-	<style>
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: column;
-			justify-content: space-between;
-			padding: var(--spacing-4) var(--spacing-0) var(--spacing-0);
-			margin: var(--spacing-0) var(--spacing-4);
-			min-height: 100vh;
-		}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate icon"
+      href="/favicon.ico"
+      type="image/png"
+      sizes="16x16"
+    />
+    <title>{title}</title>
+  </head>
+  <SEO {metadescription} {slug} {title} />
+  <div class="container">
+    <Header />
+    <main class="main-container">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--spacing-4) var(--spacing-0) var(--spacing-0);
+      margin: var(--spacing-0) var(--spacing-4);
+      min-height: 100vh;
+    }
 
-		@media screen and (min-width: 42rem) {
-			.container {
-				margin: var(--spacing-0) auto;
-			}
-		}
+    @media screen and (min-width: 42rem) {
+      .container {
+        margin: var(--spacing-0) auto;
+      }
+    }
 
-		.main-container {
-			max-width: var(--max-width-wrapper);
-			width: var(--max-width-full);
-			margin: var(--spacing-0) auto;
-		}
-	</style>
+    .main-container {
+      max-width: var(--max-width-wrapper);
+      width: var(--max-width-full);
+      margin: var(--spacing-0) auto;
+    }
+  </style>
 
 
 </html>

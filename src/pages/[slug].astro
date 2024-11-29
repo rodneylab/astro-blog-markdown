@@ -1,83 +1,99 @@
 ---
-import { Picture } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
-import BaseLayout from '~layouts/BaseLayout.astro';
+import { Picture } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BaseLayout from "~layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts');
-	return posts.map(
-		({
-			data: { featuredImage, featuredImageAlt, placeholder, postTitle, seoMetaDescription },
-			render,
-			slug,
-		}) => {
-			return {
-				params: { slug },
-				props: {
-					featuredImage,
-					featuredImageAlt,
-					placeholder,
-					seoMetaDescription,
-					render,
-					postTitle,
-				},
-			};
-		},
-	);
+  const posts = await getCollection("posts");
+  return posts.map(
+    ({
+      data: {
+        featuredImage,
+        featuredImageAlt,
+        placeholder,
+        postTitle,
+        seoMetaDescription,
+      },
+      render,
+      slug,
+    }) => {
+      return {
+        params: { slug },
+        props: {
+          featuredImage,
+          featuredImageAlt,
+          placeholder,
+          seoMetaDescription,
+          render,
+          postTitle,
+        },
+      };
+    },
+  );
 }
 
-type PostCollection = CollectionEntry<'posts'>;
+type PostCollection = CollectionEntry<"posts">;
 type Props = Pick<
-	PostCollection['data'],
-	'featuredImage' | 'featuredImageAlt' | 'seoMetaDescription' | 'placeholder' | 'postTitle'
+  PostCollection["data"],
+  | "featuredImage"
+  | "featuredImageAlt"
+  | "seoMetaDescription"
+  | "placeholder"
+  | "postTitle"
 > &
-	Pick<PostCollection, 'render'>;
+  Pick<PostCollection, "render">;
 
 const { slug } = Astro.params;
 const {
-	featuredImage,
-	featuredImageAlt,
-	seoMetaDescription: metadescription,
-	render,
-	placeholder,
-	postTitle: title,
+  featuredImage,
+  featuredImageAlt,
+  seoMetaDescription: metadescription,
+  render,
+  placeholder,
+  postTitle: title,
 }: Props = Astro.props;
 
 const { Content } = await render();
 const seoProps = {
-	metadescription,
-	slug,
-	title,
+  metadescription,
+  slug,
+  title,
 };
 
 const { format, width, height } = featuredImage;
 ---
 
 <BaseLayout {...seoProps}>
-	<h1>{title}</h1>
-	<div class="image-wrapper">
-		<img class="placeholder" aria-hidden="true" src={placeholder} width={width} height={height} />
-		<Picture
-			pictureAttributes={{ class: 'image lazy' }}
-			src={featuredImage}
-			alt={featuredImageAlt}
-			densities={[1.5, 2]}
-			formats={['avif', 'webp']}
-			fallbackFormat={format}
-			loading="eager"
-			fetchpriority="high"
-		/>
-	</div>
+  <h1>{title}</h1>
+  <div class="image-wrapper">
+    <img
+      class="placeholder"
+      aria-hidden="true"
+      src={placeholder}
+      width={width}
+      height={height}
+    />
+    <Picture
+      pictureAttributes={{ class: "image lazy" }}
+      src={featuredImage}
+      alt={featuredImageAlt}
+      densities={[1.5, 2]}
+      formats={["avif", "webp"]}
+      fallbackFormat={format}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
 
-	<div class="container">
-		<Content />
-	</div>
+  <div class="container">
+    <Content />
+  </div>
 </BaseLayout>
 
 <style>
-	.container {
-		max-width: var(--max-width-xl);
-		margin: var(--spacing-0) auto;
-	}
+  .container {
+    max-width: var(--max-width-xl);
+    margin: var(--spacing-0) auto;
+  }
 </style>
