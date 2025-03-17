@@ -17,27 +17,27 @@
   },
   "devDependencies": {
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/svelte": "^7.0.3",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@astrojs/svelte": "^7.0.6",
+    "@commitlint/config-conventional": "^19.8.0",
     "@iconify/svelte": "^4.2.0",
     "@rodneylab/picpack": "^0.1.1",
-    "astro": "5.1.7",
-    "autoprefixer": "^10.4.20",
-    "commitlint": "^19.6.1",
+    "astro": "5.5.2",
+    "autoprefixer": "^10.4.21",
+    "commitlint": "^19.8.0",
     "husky": "^9.1.7",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "postcss-html": "^1.8.0",
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.3.3",
-    "stylelint": "^16.13.2",
+    "stylelint": "^16.16.0",
     "stylelint-config-recommended": "^15.0.0",
     "subfont": "^7.2.1",
-    "svelte": "^5.19.0",
-    "svelte-check": "^4.1.4",
+    "svelte": "^5.23.1",
+    "svelte-check": "^4.1.5",
     "thumbhash": "^0.1.1",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.9"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   },
   "repository": {
     "type": "git",
@@ -48,5 +48,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

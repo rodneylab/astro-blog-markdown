@@ -32,8 +32,9 @@
   --spacing-32: 8rem;
 
   /* Fonts */
-  --font-family-serif: "Source Sans Pro", "Lustria", "Noto Serif",
-    "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  --font-family-serif:
+    "Source Sans Pro", "Lustria", "Noto Serif", "Merriweather", "Georgia",
+    "Cambria", "Times New Roman", "Times", serif;
   --font-body: var(--font-family-serif);
   --font-heading: "Lora", var(--font-family-serif);
 
