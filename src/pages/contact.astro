@@ -6,7 +6,7 @@ import ExternalLink from "~components/ExternalLink.svelte";
 import FacebookIcon from "~components/Icons/Facebook.svelte";
 import WireIcon from "~components/Icons/Wire.svelte";
 import TelegramIcon from "~components/Icons/Telegram.svelte";
-import TwitterIcon from "~components/Icons/Twitter.svelte";
+import XIcon from "~components/Icons/X.svelte";
 import website from "~config/website";
 const {
   contactEmail,
@@ -43,9 +43,9 @@ const seoProps = {
           </ExternalLink>
         </li>
         <li>
-          <span class="icon"><TwitterIcon /></span><ExternalLink
-            ariaLabel="D M Rodney Lab on Twitter"
-            href={`https://twitter.com/messages/compose?recipient-id=${twitterUserId}`}
+          <span class="icon"><XIcon /></span><ExternalLink
+            ariaLabel="D M Rodney Lab on X"
+            href={`https://x.com/messages/compose?recipient-id=${twitterUserId}`}
             ><span class="contact-address">@{twitterUsername}</span>
           </ExternalLink>
         </li>
@@ -75,7 +75,7 @@ const seoProps = {
       align-items: center;
 
       li {
-        display: inline;
+        display: flex;
         padding-left: var(--spacing-2);
         font-size: var(--font-size-2);
       }
@@ -83,7 +83,9 @@ const seoProps = {
   }
 
   .icon {
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    color: variables.$color-theme-4;
   }
   .contact-address {
     margin-left: var(--spacing-2);
